@@ -22,14 +22,15 @@ let player2Score = 0;
 let paddle1 = {
     width: 25,
     height: 100,
-    x: 0,
+    x: 30,
     y: 0,
 } 
 let paddle2 = {
     width: 25,
     height: 100,
     x: gameWidth - 25,
-    y: gameHeight - 100
+    y: gameHeight - 100,
+    x: 545,
 };
 
 window.addEventListener("keydown", changeDirection);
@@ -40,11 +41,12 @@ gameStart();
 function gameStart() { 
     createBall();
     nextTick(); 
+ 
 };
 function nextTick() { 
     intervalId = setTimeout(() => {
         clearBoard();
-        drawPaddles();  
+        drawPaddles();
         moveBall();
         drawBall(ballX, ballY);
         checkCollision();
@@ -52,19 +54,26 @@ function nextTick() {
     },10)
 };
 function clearBoard() {
-    ctx.fillStyle = "lightgray";
+    ctx.fillStyle = "black";
    ctx.fillRect(0, 0, gameWidth, gameHeight);
  };  
 function drawPaddles() { 
-    ctx.strokeStyle = "#FF0000";
-    ctx.fillStyle = "#FF0000";
+    ctx.strokeStyle = "white";
+    ctx.fillStyle = "white";
     ctx.fillRect(paddle1.x, paddle1.y, paddle1.width, paddle1.height);
     ctx.strokeRect(paddle1.x, paddle1.y, paddle1.width, paddle1.height);
 
-    ctx.fillStyle = "#FF0000";
+    ctx.fillStyle = "#white";
     ctx.fillRect(paddle2.x, paddle2.y, paddle2.width, paddle2.height);
     ctx.strokeRect(paddle2.x, paddle2.y, paddle2.width  , paddle2.height);
 };
+function drawScore() {
+    ctx.strokeStyle = "#white";
+    ctx.fillStyle = "#white";
+    ctx.fillRect = scoreText;
+    ctx.strokeRect = scoreText;
+
+}
 function createBall() {
     ballSpeed = 1;
     if (Math.round(Math.random()) == 1) {
@@ -173,14 +182,15 @@ function resetGame() {
     paddle1 = {
     width: 25,
     height: 100,
-    x: 0,
+    x: 30,
     y: 0,
 } 
     paddle2 = {
     width: 25,
     height: 100,
     x: gameWidth - 25,
-    y: gameHeight - 100
+        y: gameHeight - 100,
+    x: 545,
     };
     ballSpeed = -1;
     ballX = 0;

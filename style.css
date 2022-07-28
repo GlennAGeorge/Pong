@@ -1,18 +1,29 @@
+*{
+    background-color: white;
+}
+
+.title{
+    text-align: center;
+}
+/* .gameContainer {
+
+} */
 .gameCanvas {
-    border: 3px solid;
-    position: relative;
-    left: 35%;
+    border: 3px solid white;
 
 }
 
 .scoreText {
-   position: relative;
-   left: 50%;
-    
+ text-align: center;
+ color: black; 
+ font-size: 50px;
+
 }
 
-.resetBtn {
-    cursor: pointer;
-    position: relative;
-    left: 50%;
+p {
+   font-size: 30px;
+
+/* .resetBtn {
 }
+    */
+
